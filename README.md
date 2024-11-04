@@ -51,9 +51,9 @@ Kino Keeper - это приложение для управления избра
 
 ```bash
 
-git  clone  https://github.com/DevGruz/kino-keeper.git
+git clone https://github.com/DevGruz/kino-keeper.git
 
-cd  kino-keeper
+cd kino-keeper
 
 ```
 
@@ -68,25 +68,15 @@ cd  kino-keeper
 ```
 
 PROJECT_NAME=KinoKeeper
-
 SECRET_KEY=your_secret_key
 
-  
-
 KINOPOISK_UNOFFICIAL_URL=https://kinopoiskapiunofficial.tech
-
 KINOPOISK_UNOFFICIAL_API_KEY=
 
-  
-
 POSTGRES_HOST=kino-keeper-db
-
 POSTGRES_PORT=5432
-
 POSTGRES_USER=postgres
-
 POSTGRES_PASSWORD=postgres
-
 POSTGRES_DB=kino-keeper
 
 ```
@@ -101,7 +91,7 @@ POSTGRES_DB=kino-keeper
 
 ```bash
 
-docker-compose  up  --build
+docker-compose up --build
 
 ```
 
