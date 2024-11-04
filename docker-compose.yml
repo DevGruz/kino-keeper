@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  kino-keeper-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kino-keeper-app
+    depends_on:
+      - kino-keeper-db
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+
+  kino-keeper-db:
+    image: postgres:13
+    container_name: kino-keeper-db
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  kino-keeper-pgadmin:
+    image: dpage/pgadmin4
+    container_name: kino-keeper-pgadmin
+    logging:
+      driver: none
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      GUNICORN_ACCESS_LOGFILE: '/dev/null'
+    ports:
+      - "80:80"
+    depends_on:
+      - kino-keeper-db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+
