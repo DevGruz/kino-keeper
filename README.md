@@ -66,7 +66,6 @@ cd kino-keeper
 Создайте файл .env в корне проекта и настройте необходимые переменные окружения:. В корне проекта есть пример .env файла с названием .env-example
 
 ```
-
 PROJECT_NAME=KinoKeeper
 SECRET_KEY=your_secret_key
 
@@ -78,7 +77,6 @@ POSTGRES_PORT=5432
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 POSTGRES_DB=kino-keeper
-
 ```
 
   
@@ -90,9 +88,7 @@ POSTGRES_DB=kino-keeper
 В проекте есть docker-compose.yml файл для быстрой настройки и запуска
 
 ```bash
-
 docker-compose up --build
-
 ```
 
   
