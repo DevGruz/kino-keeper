@@ -16,11 +16,19 @@ fastapi-users = {extras = ["sqlalchemy"], version = "^14.0.0"}
 alembic = "^1.13.3"
 ruff = "^0.7.2"
 isort = "^5.13.2"
+pytest = "^8.3.3"
+pytest-asyncio = "^0.24.0"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    ".", "app",
+]
+asyncio_mode = "auto"
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.

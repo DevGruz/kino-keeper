@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  kino-keeper-app-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kino-keeper-app-test
+    depends_on:
+      - kino-keeper-db-test
+    command: poetry run pytest -x -v --disable-warnings --maxfail=1
+    networks:
+      - app-network-test
+
+  kino-keeper-db-test:
+    image: postgres:13
+    container_name: kino-keeper-db-test
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=kino-keeper-test
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    networks:
+      - app-network-test
+
+networks:
+  app-network-test:
