@@ -2,9 +2,13 @@
 
 Kino Keeper - это приложение для управления избранными фильмами с использованием [Kinopoisk API Unofficial](https://kinopoiskapiunofficial.tech/). Оно позволяет пользователям искать фильмы, просматривать детали и добавлять их в избранное.
 
+![Logo](https://raw.githubusercontent.com/DevGruz/kino-keeper/refs/heads/main/logo/logo.png)
+
+
+
 ## Оглавление
 
-  
+
 
 - [Kino Keeper](#kino-keeper)
   - [Оглавление](#оглавление)
